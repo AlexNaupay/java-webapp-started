@@ -18,6 +18,9 @@
         <!-- error messages -->
 
 
+        <!-- si jsf no encuantra en su contexto, entonces lo buscará en el contexto de spring -->
+        <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+
 
     </application>
 

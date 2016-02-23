@@ -5,11 +5,14 @@
     <!-- CONTEXT PARAMS -->
     <!-- project stage [ Development|Testing|Production] -->
     <context-param>
+        <description>Define the value returned by Application.getProjectStage(). Allowed values: Production, Development,
+            UnitTest, SystemTest, Extension. Default value is Production.</description>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
     </context-param>
     <!-- skip facelets comments -->
     <context-param>
+        <description>Do not render comments in facelets (xhtml) pages. Default is false</description>
         <param-name>facelets.SKIP_COMMENTS</param-name>
         <param-value>true</param-value>
     </context-param>
@@ -43,5 +46,27 @@
         <welcome-file>faces/index.xhtml</welcome-file>
     </welcome-file-list>
     <!-- /WELCOME FILE LIST -->
+
+
+    <!-- SPRING -->
+    <!-- Spring Context Configuration' s Path definition -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            /WEB-INF/spring/application-context.xml
+        </param-value>
+    </context-param>
+
+    <!-- The Bootstrap listener to start up and shut down Spring's root WebApplicationContext. It is registered to Servlet Container -->
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+    <listener>
+        <listener-class>
+            org.springframework.web.context.request.RequestContextListener
+        </listener-class>
+    </listener>
 
 </web-app>

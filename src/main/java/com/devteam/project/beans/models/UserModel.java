@@ -1,8 +1,10 @@
 package com.devteam.project.beans.models;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 @ManagedBean
+@ViewScoped
 public class UserModel {
 
     private int id;
